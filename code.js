@@ -394,6 +394,7 @@ function processSubmission() {
 
 //#endregion
 
+
 //#region Index Code
 function startSlide() {
     //document.getElementById("startButton").disabled = "true";
@@ -424,6 +425,10 @@ function stopSlide() {
 function updateBounds() {
     //updates the bounds whenever the user inputs new boundries
     bounds = document.getElementById("userBoundary").value;
+    if (document.getElementById("userBoundary").value == ""){
+        //technically the text for the default value reappears so I should reset the bounds too.
+        bounds = 200;
+    }
     //makes the image start going back to 0, 0 to avoid buggy looking behaviour.
     direction = 2;
 }
@@ -468,3 +473,4 @@ function imageSlide() {
     document.getElementById("stopBeatingAroundDaBush").style.marginLeft = x + "px";
     document.getElementById("stopBeatingAroundDaBush").style.marginTop = y + "px";
 }
+//#endregion
